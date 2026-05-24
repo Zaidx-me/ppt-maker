@@ -19,7 +19,9 @@ export default defineConfig({
     seed: 'tsx prisma/seed.ts',
   },
   datasource: {
-    url: env('DATABASE_URL'),
-    directUrl: env('DIRECT_URL'),
+    // During Docker image builds the environment variables may not be available.
+    // Fall back to process.env so `prisma generate` can run without failing the build.
+    url: process.env.DATABASE_URL || undefined,
+    directUrl: process.env.DIRECT_URL || undefined,
   },
 })
