@@ -24,6 +24,10 @@
   "dependencies": {
     "@ai-sdk/google": "^3.0.63",
     "@ai-sdk/react": "^3.0.166",
+    "@capacitor/android": "^8.3.4",
+    "@capacitor/cli": "^8.3.4",
+    "@capacitor/core": "^8.3.4",
+    "@capacitor/ios": "^8.3.4",
     "@imagekit/nodejs": "^7.5.0",
     "@prisma/adapter-pg": "^7.4.2",
     "@prisma/client": "^7.4.2",
