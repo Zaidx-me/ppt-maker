@@ -6,6 +6,11 @@ RUN apt-get update && apt-get install -y openssl && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
+# Accept database connection strings at build time so prisma config can load
+ARG DATABASE_URL=""
+ARG DIRECT_URL=""
+ENV DATABASE_URL=${DATABASE_URL}
+ENV DIRECT_URL=${DIRECT_URL}
 # Install dependencies
 FROM base AS deps
 COPY package.json package-lock.json ./
